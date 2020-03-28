@@ -19,7 +19,6 @@ class NetworkScanner:
         broadcast_ether = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
         arp_packet = broadcast_ether/arp_request_packet_object
         answered_list = scapy.srp(arp_packet, timeout=1, verbose=False)[0]
-        print(answered_list.show())
         return answered_list
 
     @staticmethod
